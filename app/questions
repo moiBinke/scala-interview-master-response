@@ -1,0 +1,51 @@
+1) Explain REST and RESTful
+==>Reponse:
+*REST(Representational State Transfer) est un type d’architecture qui travaille avec HTTP et permet à un client d’accéder à des services web.il se caractérise par le fait qu'on accède à une ressource par son URI(Uniform Resource Identifier)  pour acceder à l'information on utilise des opérations:GET lecture / POST écriture / PUT modification / DELETE suppression).En Rest  le client ne connait pas la structure et le contenu des informations stockées sur le serveur.
+*Une API est Restfull quand elle respecte les normes de l'architecture Rest
+
+2) Explain the architectural style for the creation of a web API (client server communication, formatting language, etc.): 
+==>Reponse:
+Pour créer une WEB api on :
+	-On cree le model(Il répresente nos différents Entity)
+	-Après on cree la base de données(Qui peut dans certains cas etre genéré) et on l'initialise pour commencer dès maintenant nos petis tests
+	-Après on cree la couche DAO(Data Accèss Object): c'est cette couche qui se charge des opérations CRUD (Create, Read, Update, Delete) 
+	(Jusqu'à Ici on parle pas de Rest)
+	-Maintenant on cree la couche de services
+	-Ensuite Il s'agit de développer  la couche de contrôle. C'est cette couche qui intercepte et filtre toutes les requêtes utilisateurs. Chaque contrôleur dispose d'un service pour traiter les requêtes: c'est le service REST. 
+	-Souvent on cree un package pour gérer les exceptions et un autre pour les tests unitaires.
+
+
+3) Explain HTTP requests types when used with RESTful web (GET, PUT, POST, etc.)
+==>Reponse:
+GET: pour recuperer les données
+PUT:La méthode PUT remplace toutes les représentations actuelles de la ressource visée par le contenu de la requête.
+POST:La méthode POST est utilisée pour envoyer une entité vers la ressource indiquée.Cet envoie est effectué en arrière plan sur les navigateur.Get aussi peut envoyer des informations.
+Delete:La méthode DELETE supprime la ressource indiquée
+Head:La méthode HEAD demande une réponse identique à une requête GET pour laquelle on aura omis le corps de la réponse (on a uniquement l'en-tête).
+
+4) Explain the difference between stateless and stateful protocol. Which type of protocol is HTTP ?
+==>Reponse:
+	*Un protocole est stateless s'il est sans etat c'est à dire que l'etat d'une session n'est pas enregistré.Ainsi chaque requete est traité comme une transaction à part entière. Tandisque les stateful protocol enregistrent les informations de session entre deux requetes.
+	*HTTP est stateless
+5) Explain the difference between a GET and a POST (like how are sent the parameters)
+==>Reponse:
+La méthode GET est la valeur de méthode par défaut. elle peut faire passer des données en paramètres mais elle a une taille limitée et n'est pas trè securisée.Tandisque POST n'a pas de limite aussi POST est indispensable pour des codes non ASCII et elle est recommandée pour modifier les données sur le serveur ainsi que pour les données sensibles puisqu'elle communique en arrière plan sur les browsers.
+6) You can’t work out how to solve a coding problem. What do you do to find the answer?
+==>Reponse:
+  Si j'ai un problème avec mon code, je consulte google et surtout le site https://stackoverflow.com. Je pose aussi des questions à mes collègues qui sont libres. Géneralement, j'adopte la solution suivante  algorithmiquement:
+
+Si j'ai un problème dans mon programme{
+	si{ c'est pas syntaxique
+	 	si c'est pas sémantique(en faisant une trace du code){
+	 		Alors c'est surement une configuration{
+				Donc je consulte google et sutout https://stackoverflow.com
+	 		}
+	 	}
+	 	Sinon{
+	 		refaire l'algorithme
+	 	}
+	}
+	Sinon{
+		Documentation
+	}
+ }
